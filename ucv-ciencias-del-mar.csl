@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="es-ES" demote-non-dropping-particle="never">
+  <info>
+    <title>UCV Ciencias del Mar</title>
+    <id>http://www.ucv.es/estilo/ucv-ciencias-del-mar</id>
+    <link href="http://www.ucv.es/estilo/ucv-ciencias-del-mar" rel="self"/>
+    <author>
+      <name>ChatGPT Adaptación</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2025-05-28T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" name-as-sort-order="all" sort-separator=", " delimiter=", " initialize-with=". "/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="issued" prefix="(" suffix=")"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" line-spacing="2" entry-spacing="0">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="issued" prefix="(" suffix=")"/>
+        <text variable="title" font-style="italic"/>
+        <text variable="container-title"/>
+        <text variable="volume"/>
+        <text variable="page" prefix="pp. "/>
+        <text variable="publisher"/>
+        <text variable="URL" prefix="Disponible en: "/>
+        <date variable="accessed" prefix=" [Consulta: " suffix="].">
+          <date-part name="day" suffix="/"/>
+          <date-part name="month" suffix="/"/>
+          <date-part name="year"/>
+        </date>
+      </group>
+    </layout>
+  </bibliography>
+</style>
