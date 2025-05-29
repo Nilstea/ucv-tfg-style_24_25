@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-GB" demote-non-dropping-particle="never">
+  <info>
+    <title>UCV Ciencias del Mar - FINAL</title>
+    <id>http://www.ucv.es/estilo/ucv-ciencias-del-mar-final</id>
+    <link href="http://www.ucv.es/estilo/ucv-ciencias-del-mar-final" rel="self"/>
+    <author>
+      <name>ChatGPT Adaptación</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2025-05-28T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author" et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1">
+      <name form="long" and="text" delimiter=", " initialize-with=""/>
+      <et-al term="et-al" font-style="italic"/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="genre">
+    <choose>
+      <if type="thesis">
+        <text variable="genre" default="Doctoral thesis"/>
+      </if>
+    </choose>
+  </macro>
+
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="issued" prefix="(" suffix=")"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="true" line-spacing="2" entry-spacing="0">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="issued" prefix="(" suffix=")"/>
+        <text variable="title" font-style="italic" strip-periods="true">
+          <replace match="—" with=":"/>
+          <replace match="–" with=":"/>
+        </text>
+        <text macro="genre"/>
+        <text variable="container-title" font-style="italic"/>
+        <text variable="volume"/>
+        <text variable="page" prefix="pp. "/>
+        <text variable="publisher"/>
+        <text variable="URL" prefix="Available at: "/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
